@@ -109,10 +109,10 @@ class UserController extends Controller
         // これで画像を差し替えていない場合、元の画像がそのまま選択される
         if (empty($request->img_name) == false) {
           if ($request ->file('img_name')->isValid([])) {
-          $image = base64_encode(file_get_contents($request->img_name->getRealPath()));
-            User::insert([
-              "img_name" => $image
-            ]);
+            // ファイルのオリジナルネームを取得する
+            $file = $request->file('img_name');
+            $image = base64_encode(file_get_contents($request->file('img_name')));
+            $user->img_name = $image;
           }
         }
         $user->name = $request->name;

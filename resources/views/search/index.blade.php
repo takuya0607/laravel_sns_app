@@ -18,7 +18,7 @@
           <div>
             <a href="{{ route('users.show', ['name' => $searched_user->name]) }}" class="text-dark">
               @isset($searched_user->img_name)
-                <img src="/storage/images/{{$searched_user->img_name}}" class="rounded-circle userProfileImgIcon">
+                <img src="data:image/png;base64,{{$searched_user->img_name}}" class="rounded-circle userProfileImgIcon" style="object-fit: cover; width: 60px; height: 60px;">
               @else
                 <i class="fas fa-user-circle fa-3x"></i>
               @endisset
@@ -81,7 +81,7 @@
       <div class="card-body d-flex flex-row">
         <a href="{{ route('users.show', ['name' => $searched_article->user->name]) }}" class="text-dark">
           @isset($searched_article->user->img_name)
-            <img src="/storage/images/{{$searched_article->user->img_name}}" class="rounded-circle userProfileImgIcon">
+            <img src="data:image/png;base64,{{$searched_article->user->img_name}}" class="rounded-circle userProfileImgIcon" style="object-fit: cover; width: 60px; height: 60px;">
           @else
             <i class="fas fa-user-circle fa-3x mr-2"></i>
           @endisset

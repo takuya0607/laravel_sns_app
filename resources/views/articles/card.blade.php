@@ -1,18 +1,17 @@
 <div class="card mt-3">
   <div class="card-body d-flex flex-row">
     <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
-      @isset($article->user->img_name)
-        <img src="/storage/images/{{$article->user->img_name}}" class="rounded-circle userProfileImgIcon">
+      @if (!empty($article->user->img_name))
+        <img src="data:image/png;base64,{{$article->user->img_name}}" class="rounded-circle userProfileImgIcon" style="object-fit: cover; width: 60px; height: 60px;">
       @else
         <i class="fas fa-user-circle fa-3x mr-2"></i>
-      @endisset
-    </a>
+      @endif
     <div>
       <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
         <div class="font-weight-bold">{{ $article->user->name }}</div>
       </a>
       <div class="font-weight-lighter">{{ $article->created_at->format('Y/m/d H:i') }}</div>
-    </div>  
+    </div>
 
   @if( Auth::id() === $article->user_id )
     <!-- dropdown -->

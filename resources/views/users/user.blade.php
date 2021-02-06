@@ -4,7 +4,7 @@
       <div>
         <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
           @isset($user->img_name)
-            <img src="/storage/images/{{$user->img_name}}" class="rounded-circle userProfileImgIcon" style="object-fit: cover; width: 60px; height: 60px;">
+            <img src="data:image/png;base64,{{ $user->img_name }}" class="rounded-circle userProfileImgIcon" style="object-fit: cover; width: 60px; height: 60px;">
           @else
             <i class="fas fa-user-circle fa-3x"></i>
           @endisset

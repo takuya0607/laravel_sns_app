@@ -6,7 +6,7 @@
                 <li class="list-group-item">
                     <div class="py-3 w-100 d-flex">
                         @isset($comment->user->img_name)
-                          <img src="/storage/images/{{$comment->user->img_name}}" class="rounded-circle userProfileImgIcon" style="object-fit: cover; width: 60px; height: 60px;">
+                          <img src="data:image/png;base64,{{$comment->user->img_name}}" class="rounded-circle userProfileImgIcon" style="object-fit: cover; width: 60px; height: 60px;">
                         @else
                           <i class="fas fa-user-circle fa-3x"></i>
                         @endisset
@@ -34,7 +34,7 @@
                           <div class="form-group row mb-0">
                               <div class="col-md-12 p-3 w-100 d-flex">
                                 @isset($user->img_name)
-                                  <img src="/storage/images/{{$user->img_name}}" class="rounded-circle userProfileImgIcon" style="object-fit: cover; width: 60px; height: 60px;">
+                                  <img src="data:image/png;base64,{{$user->img_name}}" class="rounded-circle userProfileImgIcon" style="object-fit: cover; width: 60px; height: 60px;">
                                 @else
                                   <i class="fas fa-user-circle fa-3x"></i>
                                 @endisset

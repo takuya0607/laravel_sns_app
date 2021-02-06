@@ -3,7 +3,7 @@
     <div class="d-flex flex-row">
       <a href="{{ route('users.show', ['name' => $person->name]) }}" class="text-dark">
         @isset($person->img_name)
-          <img src="/storage/images/{{$person->img_name}}" class="rounded-circle userProfileImgIcon">
+          <img src="data:image/png;base64,{{$person->img_name}}" class="rounded-circle userProfileImgIcon">
         @else
           <i class="fas fa-user-circle fa-3x"></i>
         @endisset
