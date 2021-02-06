@@ -3,10 +3,11 @@
 @section('title', 'ユーザー登録')
 
 @section('content')
+<br>
   <div class="container">
     <div class="row">
       <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
-        <h1 class="text-center"><a class="text-dark" href="/">memo</a></h1>
+        <h1 class="text-center"><i class="fas fa-blog"></i><a class="text-dark" href="/"></a></h1>
         <div class="card mt-3">
           <div class="card-body text-center">
             <h2 class="h3 card-title text-center mt-2">ユーザー登録</h2>
@@ -20,7 +21,7 @@
                 <div class="md-form">
                   <label for="name">ユーザー名</label>
                   <input class="form-control" type="text" id="name" name="name" required>
-                  <small>英数字3〜16文字(登録後の変更はできません)</small>
+                  <small>3〜16文字(登録後の変更可能)</small>
                 </div>
                 <div class="md-form">
                   <label for="email">メールアドレス</label>
