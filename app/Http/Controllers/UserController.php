@@ -109,7 +109,7 @@ class UserController extends Controller
         // これで画像を差し替えていない場合、元の画像がそのまま選択される
         if (empty($request->img_name) == false) {
           if ($request ->file('img_name')->isValid([])) {
-          $user->img_name = $request->img_name->getClientOriginalName();
+          $user->img_name = base64_encode($request->img_name->getClientOriginalName());
           $fileName = $request->file('img_name')->getClientOriginalName();
           $imagePath = $request->img_name->storeAs('public/images/', $fileName);
           }
