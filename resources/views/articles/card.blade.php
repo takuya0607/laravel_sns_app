@@ -6,7 +6,7 @@
       @else
         <i class="fas fa-user-circle fa-3x mr-2"></i>
       @endif
-    <div>
+    <div class="ml-3">
       <a href="{{ route('users.show', ['name' => $article->user->name]) }}" class="text-dark">
         <div class="font-weight-bold">{{ $article->user->name }}</div>
       </a>

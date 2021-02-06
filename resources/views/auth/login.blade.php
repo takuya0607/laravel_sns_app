@@ -1,4 +1,4 @@
-@extends('app')
+  @extends('app')
 
 @section('title', 'ログイン')
 
@@ -35,15 +35,12 @@
                   <a href="{{ route('password.request') }}" class="card-text">パスワードを忘れた方</a>
                 </div>
 
-                <button class="btn btn-block aqua-gradient mt-2 mb-2" type="submit">ログイン</button>
-                <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger">
+                <button class="btn btn-block aqua-gradient mt-3 mb-2" type="submit">ログイン</button>
+                <a href="{{ route('login.{provider}', ['provider' => 'google']) }}" class="btn btn-block btn-danger mt-1">
                   <i class="fab fa-google mr-1"></i>Googleでログイン
                 </a>
               </form>
-              <br>
-              <div class="mt-0">
-                <a href="{{ route('register') }}" class="card-text">ユーザー登録はこちら</a>
-              </div>
+                <a href="{{ route('register') }}" class="btn btn-block blue-gradient btn-danger mt-3">ユーザー登録はこちら</a>
 
             </div>
           </div>

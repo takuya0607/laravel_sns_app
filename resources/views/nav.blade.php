@@ -37,16 +37,41 @@
           マイページ
         </button>
         <div class="dropdown-divider"></div>
-        <button form="logout-button" class="dropdown-item" type="submit">
-          ログアウト
-        </button>
+        <div class="dropdown">
+          <button class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete" type="button">
+            ログアウト
+          </button>
+          </a>
+        </div>
       </div>
     </li>
-    <!-- buttonタグのformと、idの名称を一致させる事で紐付けを行う -->
-    <form id="logout-button" method="POST" action="{{ route('logout') }}">
-      @csrf
-    </form>
-    <!-- Dropdown -->
+
+    <!-- modal -->
+      <div id="modal-delete" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+              <!-- buttonタグのformと、idの名称を一致させる事で紐付けを行う -->
+                <div class="modal-body">
+                  本当にログアウトしますか？
+                </div>
+                <div class="modal-footer justify-content-between">
+                  <a class="btn btn-outline-grey" data-dismiss="modal">キャンセル</a>
+                <form id="logout-button" method="POST" action="{{ route('logout') }}">
+                  @csrf
+                  <button form="logout-button" class="btn btn-danger" type="submit">
+                  ログアウト
+                  </button>
+                </form>
+          </div>
+        </div>
+      </div>
+    <!-- modal -->
+
     @endauth
 
   </ul>
