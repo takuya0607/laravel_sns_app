@@ -110,8 +110,8 @@ class UserController extends Controller
         if (empty($request->img_name) == false) {
           if ($request ->file('img_name')->isValid([])) {
           $image = base64_encode(file_get_contents($request->img_name->getRealPath()));
-            Bbs::insert([
-              "image" => $image
+            User::insert([
+              "img_name" => $image
             ]);
           }
         }
